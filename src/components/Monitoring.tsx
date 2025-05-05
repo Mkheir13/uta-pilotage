@@ -143,7 +143,7 @@ const Monitoring: React.FC = () => {
                     action: 'Optimisation requêtes',
                   },
                   {
-                    metric: 'Taux d'Erreur',
+                    metric: "Taux d'Erreur",
                     warning: '1%',
                     critical: '5%',
                     action: 'Investigation immédiate',
@@ -219,39 +219,39 @@ const Monitoring: React.FC = () => {
       </div>
       
       <div className="mt-10 bg-gradient-to-r from-purple-900/30 to-pink-900/30 p-6 rounded-2xl backdrop-blur-sm">
-        <h3 className="text-2xl font-bold mb-4 text-white text-center">Project Success Metrics</h3>
+        <h3 className="text-2xl font-bold mb-4 text-white text-center">Métriques de Succès du Projet</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              metric: 'Recommendation Accuracy',
+              metric: 'Précision des Recommandations',
               target: '95%',
-              importance: 'Critical',
-              description: 'Percentage of recommendations rated positively by users',
+              importance: 'Critique',
+              description: 'Pourcentage de recommandations évaluées positivement par les utilisateurs',
             },
             {
-              metric: 'User Adoption Rate',
-              target: '500k users in Year 1',
-              importance: 'High',
-              description: 'Total active users utilizing the platform',
+              metric: 'Taux d\'Adoption',
+              target: '500k utilisateurs en 1 an',
+              importance: 'Élevée',
+              description: 'Nombre total d\'utilisateurs actifs sur la plateforme',
             },
             {
-              metric: 'Streaming Platform Integrations',
-              target: '5+ major platforms',
-              importance: 'High',
-              description: 'Number of music services connected to UTA',
+              metric: 'Intégrations Plateformes de Streaming',
+              target: '5+ plateformes majeures',
+              importance: 'Élevée',
+              description: 'Nombre de services musicaux connectés à UTA',
             },
             {
-              metric: 'System Reliability',
-              target: '99.95% uptime',
-              importance: 'Critical',
-              description: 'Percentage of time the service is operational',
+              metric: 'Fiabilité du Système',
+              target: '99.95% disponibilité',
+              importance: 'Critique',
+              description: 'Pourcentage de temps pendant lequel le service est opérationnel',
             },
           ].map((item, index) => (
             <div key={index} className="bg-black/20 p-4 rounded-xl">
               <h4 className="text-lg font-bold text-white mb-1">{item.metric}</h4>
               <div className="flex items-center mb-2">
                 <div className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                  item.importance === 'Critical' 
+                  item.importance === 'Critique' 
                     ? 'bg-pink-900/40 text-pink-400'
                     : 'bg-purple-900/40 text-purple-400'
                 }`}>
@@ -260,7 +260,7 @@ const Monitoring: React.FC = () => {
               </div>
               <p className="text-gray-300 text-sm mb-2">{item.description}</p>
               <div className="mt-2 pt-2 border-t border-white/10">
-                <p className="text-white font-semibold">Target: {item.target}</p>
+                <p className="text-white font-semibold">Objectif: {item.target}</p>
               </div>
             </div>
           ))}
