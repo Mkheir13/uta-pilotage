@@ -37,15 +37,14 @@ const Analysis: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-green-500/20 hover:border-green-500/30 transition-all">
             <h3 className="text-2xl font-bold mb-4 text-green-400 flex items-center">
               <Zap className="mr-2 h-6 w-6" />
-              Strengths
+              Forces
             </h3>
             <ul className="space-y-3">
               {[
-                'Proprietary AI recommendation algorithm with 90% accuracy',
-                'Cross-platform compatibility with major music services',
-                'Team expertise in machine learning and music industry',
-                'Low-latency architecture ensuring fast recommendations',
-                'Unique mood-based discovery features',
+                'Algorithme de recommandation transparent et explicable',
+                'Intégration complète avec Spotify',
+                'Multiple approches de recommandation (dataset, historique, personnalisé)',
+                'Interface utilisateur intuitive et esthétique',
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
@@ -58,15 +57,14 @@ const Analysis: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-red-500/20 hover:border-red-500/30 transition-all">
             <h3 className="text-2xl font-bold mb-4 text-red-400 flex items-center">
               <Webhook className="mr-2 h-6 w-6" />
-              Weaknesses
+              Faiblesses
             </h3>
             <ul className="space-y-3">
               {[
-                'Dependent on third-party music streaming APIs',
-                'Limited historical user data for algorithm training',
-                'High infrastructure costs for AI processing',
-                'New entrant in a competitive market',
-                'Complex integration with varying music service APIs',
+                'Dépendance à l\'API Spotify',
+                'Dataset limité par rapport à la bibliothèque complète de Spotify',
+                'Performance des recommandations pour les utilisateurs avec des goûts musicaux de niche',
+                'Infrastructure à petite échelle',
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-red-500 mr-2">✗</span>
@@ -79,15 +77,14 @@ const Analysis: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-blue-500/20 hover:border-blue-500/30 transition-all">
             <h3 className="text-2xl font-bold mb-4 text-blue-400 flex items-center">
               <TrendingUp className="mr-2 h-6 w-6" />
-              Opportunities
+              Opportunités
             </h3>
             <ul className="space-y-3">
               {[
-                'Growing market for personalized music experiences',
-                'Potential partnerships with streaming platforms',
-                'Expansion into artist recommendation for labels',
-                'Integration with smart home and IoT devices',
-                'Emerging markets with increasing streaming adoption',
+                'Croissance du marché des services de streaming musical',
+                'Intérêt croissant pour les recommandations musicales transparentes et personnalisables',
+                'Possibilité d\'intégration avec d\'autres services de streaming',
+                'Possibilité de monétisation via un modèle freemium',
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-blue-500 mr-2">↗</span>
@@ -104,11 +101,10 @@ const Analysis: React.FC = () => {
             </h3>
             <ul className="space-y-3">
               {[
-                'Les grandes plateformes de streaming développant des fonctionnalités similaires',
-                'Modifications des conditions d\'accès aux API tierces',
-                'Réglementations sur la confidentialité affectant la collecte de données',
-                'Coûts d\'acquisition élevés sur des marchés saturés',
-                'Concurrents établis avec une base d\'utilisateurs plus importante',
+                'Modifications potentielles de l\'API Spotify qui pourraient affecter le service',
+                'Concurrence d\'autres outils de recommandation musicale',
+                'Limites d\'utilisation de l\'API Spotify',
+                'Coûts d\'infrastructure croissants avec l\'augmentation des utilisateurs',
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-amber-500 mr-2">!</span>
@@ -133,71 +129,71 @@ const Analysis: React.FC = () => {
                 {[
                   {
                     category: 'Politique',
-                    factor: 'Réglementations sur le contenu numérique',
-                    impact: 'Réglementations variables selon les régions nécessitant un filtrage du contenu',
+                    factor: 'Réglementations sur la protection des données musicales',
+                    impact: 'Nécessité de conformité avec les lois sur la propriété intellectuelle',
                     type: 'Menace',
                     color: 'text-amber-400',
                   },
                   {
                     category: 'Politique',
-                    factor: 'Politiques d\'internet ouvert',
-                    impact: 'Permet la diffusion mondiale de contenu sans restrictions',
+                    factor: 'Politiques de propriété intellectuelle et droits d\'auteur',
+                    impact: 'Impact sur l\'utilisation des données musicales',
+                    type: 'Menace',
+                    color: 'text-amber-400',
+                  },
+                  {
+                    category: 'Économique',
+                    factor: 'Croissance du marché du streaming musical',
+                    impact: 'Base d\'utilisateurs potentiels plus large',
                     type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
                     category: 'Économique',
-                    factor: 'Croissance des abonnements streaming',
-                    impact: 'Base d\'utilisateurs potentiels plus large pour l\'intégration',
-                    type: 'Opportunité',
-                    color: 'text-green-400',
-                  },
-                  {
-                    category: 'Économique',
-                    factor: 'Récession affectant les dépenses discrétionnaires',
-                    impact: 'Réduction de la volonté de payer pour les services musicaux premium',
-                    type: 'Menace',
-                    color: 'text-amber-400',
-                  },
-                  {
-                    category: 'Social',
-                    factor: 'Intérêt croissant pour les expériences personnalisées',
-                    impact: 'Demande accrue de recommandations musicales personnalisées',
+                    factor: 'Possibilités de monétisation',
+                    impact: 'Potentiel de revenus via modèle freemium et partenariats',
                     type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
                     category: 'Social',
-                    factor: 'La musique comme monnaie sociale',
-                    impact: 'Adoption accrue des fonctionnalités de partage et sociales',
+                    factor: 'Tendances d\'écoute musicale changeantes',
+                    impact: 'Adaptation continue des algorithmes de recommandation',
+                    type: 'Opportunité',
+                    color: 'text-green-400',
+                  },
+                  {
+                    category: 'Social',
+                    factor: 'Communautés d\'utilisateurs de Spotify',
+                    impact: 'Base d\'utilisateurs cible existante',
                     type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
                     category: 'Technologique',
-                    factor: 'Avancées en IA et ML',
-                    impact: 'Possibilité d\'algorithmes de recommandation améliorés',
-                    type: 'Opportunité',
-                    color: 'text-green-400',
-                  },
-                  {
-                    category: 'Technologique',
-                    factor: 'Modifications des API par les services de streaming',
-                    impact: 'Peut nécessiter une adaptation fréquente du code d\'intégration',
+                    factor: 'Évolution des API de streaming',
+                    impact: 'Nécessité d\'adaptation continue',
                     type: 'Menace',
                     color: 'text-amber-400',
+                  },
+                  {
+                    category: 'Technologique',
+                    factor: 'Avancées en matière d\'algorithmes de recommandation',
+                    impact: 'Amélioration possible de la qualité des recommandations',
+                    type: 'Opportunité',
+                    color: 'text-green-400',
                   },
                   {
                     category: 'Environnemental',
-                    factor: 'Consommation énergétique du cloud computing',
-                    impact: 'Coûts plus élevés pour les options de centres de données durables',
+                    factor: 'Empreinte carbone des services cloud',
+                    impact: 'Coûts environnementaux à considérer',
                     type: 'Menace',
                     color: 'text-amber-400',
                   },
                   {
                     category: 'Légal',
-                    factor: 'RGPD et lois sur la protection des données',
-                    impact: 'Gestion plus stricte des données de préférences utilisateur requise',
+                    factor: 'Conformité au RGPD',
+                    impact: 'Gestion stricte des données utilisateur requise',
                     type: 'Menace',
                     color: 'text-amber-400',
                   },
