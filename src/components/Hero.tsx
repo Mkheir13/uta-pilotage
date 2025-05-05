@@ -31,17 +31,17 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-xl md:text-2xl mb-10 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-          The next generation of music discovery and personalization, powered by advanced AI technology and a deep understanding of human musical preferences.
+          La prochaine génération de découverte et de personnalisation musicale, propulsée par une technologie d'IA avancée et une compréhension approfondie des préférences musicales humaines.
         </p>
         
         <div className="flex flex-wrap justify-center gap-6 mb-12">
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md py-3 px-5 rounded-full border border-white/20">
             <Headphones className="h-5 w-5 text-pink-400" />
-            <span className="text-white">Personalized Recommendations</span>
+            <span className="text-white">Recommandations Personnalisées</span>
           </div>
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md py-3 px-5 rounded-full border border-white/20">
             <Radio className="h-5 w-5 text-pink-400" />
-            <span className="text-white">Mood-Based Discovery</span>
+            <span className="text-white">Découverte par Humeur</span>
           </div>
         </div>
         
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           href="#introduction" 
           className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-full transform transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25"
         >
-          Explore Project
+          Explorer le Projet
         </a>
       </div>
       

@@ -29,14 +29,14 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Project</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Projet</h3>
             <ul className="space-y-2">
               {[
                 { label: 'Introduction', href: '#introduction' },
-                { label: 'Organization', href: '#organization' },
-                { label: 'System', href: '#system' },
-                { label: 'Analysis', href: '#analysis' },
-                { label: 'Strategy', href: '#strategy' },
+                { label: 'Organisation', href: '#organization' },
+                { label: 'Système', href: '#system' },
+                { label: 'Analyse', href: '#analysis' },
+                { label: 'Stratégie', href: '#strategy' },
               ].map((link, index) => (
                 <li key={index}>
                   <a 
@@ -54,11 +54,11 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Documentation</h3>
             <ul className="space-y-2">
               {[
-                { label: 'Roadmap', href: '#roadmap' },
+                { label: 'Feuille de Route', href: '#roadmap' },
                 { label: 'Architecture', href: '#architecture' },
-                { label: 'Continuity', href: '#continuity' },
-                { label: 'Costs', href: '#costs' },
-                { label: 'Monitoring', href: '#monitoring' },
+                { label: 'Continuité', href: '#continuity' },
+                { label: 'Coûts', href: '#costs' },
+                { label: 'Surveillance', href: '#monitoring' },
               ].map((link, index) => (
                 <li key={index}>
                   <a 
