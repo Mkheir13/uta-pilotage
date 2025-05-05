@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SectionContainer from './layout/SectionContainer';
-import { Target, Compass, BrainCircuit, Check } from 'lucide-react';
+import { Target, Compass, BrainCircuit, Check, Globe, Brain, Layout, BarChart } from 'lucide-react';
 
 const Strategy: React.FC = () => {
   const [activeStrategy, setActiveStrategy] = useState<number>(2);
@@ -61,133 +61,141 @@ const Strategy: React.FC = () => {
   ];
 
   return (
-    <SectionContainer id="strategy" title="Business Strategy">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
-        {strategies.map((strategy) => (
-          <div
-            key={strategy.id}
-            className={`relative overflow-hidden bg-white/5 backdrop-blur-md p-6 rounded-2xl border transition-all cursor-pointer ${
-              activeStrategy === strategy.id
-                ? `border-${strategy.color}-500/50 shadow-lg shadow-${strategy.color}-500/10`
-                : 'border-purple-500/20 hover:border-purple-500/30'
-            }`}
-            onClick={() => setActiveStrategy(strategy.id)}
-          >
-            {activeStrategy === strategy.id && (
-              <div className="absolute top-3 right-3">
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-full p-1">
-                  <Check className="h-4 w-4 text-white" />
-                </div>
-              </div>
-            )}
-            
-            <div className="flex items-center mb-4">
-              <div className={`p-2 rounded-full bg-${strategy.color}-900/30 mr-3`}>
-                {strategy.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white">{strategy.name}</h3>
+    <SectionContainer id="strategy" title="Stratégie Commerciale">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
+          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
+            <Globe className="mr-2 h-6 w-6 text-pink-500" />
+            Intégration Multi-Plateformes
+          </h3>
+          <div className="space-y-4">
+            <p className="text-gray-300">Élargir l'intégration au-delà de Spotify pour inclure d'autres plateformes de streaming musical</p>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Avantages</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Base d'utilisateurs potentiels plus large</li>
+                <li>Réduction de la dépendance à Spotify</li>
+                <li>Recommandations plus riches et diversifiées</li>
+              </ul>
             </div>
-            
-            <p className="text-gray-300 mb-4">{strategy.description}</p>
-            
-            <div className="grid grid-cols-1 gap-3">
-              <div className="bg-white/10 p-3 rounded-xl">
-                <p className="text-green-400 font-medium mb-2">Advantages</p>
-                <ul className="space-y-1">
-                  {strategy.pros.map((pro, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-green-500 mr-2 shrink-0">✓</span>
-                      <span className="text-gray-300 text-sm">{pro}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="bg-white/10 p-3 rounded-xl">
-                <p className="text-red-400 font-medium mb-2">Limitations</p>
-                <ul className="space-y-1">
-                  {strategy.cons.map((con, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-red-500 mr-2 shrink-0">✗</span>
-                      <span className="text-gray-300 text-sm">{con}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Limitations</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Complexité des intégrations multiples</li>
+                <li>Coûts de développement élevés</li>
+                <li>Concurrence des systèmes natifs</li>
+              </ul>
             </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-6 rounded-2xl backdrop-blur-sm border border-pink-500/30">
-        <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
-          Strategic Plan Implementation
-        </h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-              <span className="inline-block w-8 h-8 bg-purple-600 text-white rounded-full mr-2 flex items-center justify-center text-xs">1</span>
-              Business Strategy
-            </h4>
-            <ul className="space-y-3 ml-10">
-              {[
-                'Focus on AI algorithm excellence as our primary differentiator',
-                'Develop proprietary recommendation engine with patentable innovations',
-                'Form strategic partnerships with mid-sized streaming platforms first',
-                'Pursue enterprise B2B model with streaming services rather than direct-to-consumer',
-                'Create APIs for third-party developers to extend functionality',
-              ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-pink-500 mr-2">▷</span>
-                  <span className="text-gray-300 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-              <span className="inline-block w-8 h-8 bg-pink-600 text-white rounded-full mr-2 flex items-center justify-center text-xs">2</span>
-              IS Strategy
-            </h4>
-            <ul className="space-y-3 ml-10">
-              {[
-                'Build scalable, cloud-native microservice architecture',
-                'Implement machine learning pipeline with continuous retraining capabilities',
-                'Design data lake for processing vast music metadata and user interactions',
-                'Create secure API gateway for external service integration',
-                'Establish automated CI/CD pipeline for rapid iteration and testing',
-                'Adopt infrastructure-as-code for consistent deployment across environments',
-              ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-purple-500 mr-2">▷</span>
-                  <span className="text-gray-300 text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
-        
-        <div className="mt-6 pt-6 border-t border-pink-500/30">
-          <h4 className="text-xl font-semibold text-white mb-3 flex items-center">
-            <span className="inline-block w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full mr-2 flex items-center justify-center text-xs">3</span>
-            Success Criteria
-          </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { metric: 'Recommendation Accuracy', target: '95% within 6 months' },
-              { metric: 'API Response Time', target: '<100ms average' },
-              { metric: 'Partnership Agreements', target: '3+ major platforms by EOY' },
-              { metric: 'Algorithm Patents', target: 'File 2+ patents in 12 months' },
-              { metric: 'Processing Scale', target: '10M+ songs analyzed daily' },
-              { metric: 'Data Processing Efficiency', target: '30% better than industry average' },
-            ].map((item, index) => (
-              <div key={index} className="bg-black/20 p-3 rounded-xl">
-                <p className="text-pink-400 font-medium">{item.metric}</p>
-                <p className="text-white">{item.target}</p>
-              </div>
-            ))}
+
+        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
+          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
+            <Brain className="mr-2 h-6 w-6 text-pink-500" />
+            Excellence Algorithmique
+          </h3>
+          <div className="space-y-4">
+            <p className="text-gray-300">Approfondir l'expertise en algorithmes de recommandation et en capacités d'apprentissage automatique</p>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Avantages</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Qualité de recommandation supérieure</li>
+                <li>Propriété intellectuelle brevetable</li>
+                <li>Solutions en marque blanche</li>
+              </ul>
+            </div>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Limitations</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Coûts élevés de R&D</li>
+                <li>Temps de développement long</li>
+                <li>Ressources computationnelles importantes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
+          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
+            <Layout className="mr-2 h-6 w-6 text-pink-500" />
+            Expérience Utilisateur
+          </h3>
+          <div className="space-y-4">
+            <p className="text-gray-300">Créer l'interface utilisateur la plus intuitive et engageante pour la découverte musicale</p>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Avantages</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Barrière d'adoption réduite</li>
+                <li>Meilleure rétention utilisateur</li>
+                <li>Différenciation par le design</li>
+              </ul>
+            </div>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Limitations</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Risque de prioriser la forme</li>
+                <li>Métriques subjectives</li>
+                <li>Fonctionnalités réplicables</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
+          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
+            <Target className="mr-2 h-6 w-6 text-pink-500" />
+            Plan d'Implémentation
+          </h3>
+          <div className="space-y-6">
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Stratégie Commerciale</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Focus sur l'excellence algorithmique</li>
+                <li>Développement d'un moteur propriétaire</li>
+                <li>Partenariats avec services de streaming</li>
+                <li>Modèle B2B avec APIs tierces</li>
+              </ul>
+            </div>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Systèmes d'Information</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>Architecture microservices cloud-native</li>
+                <li>Pipeline ML avec réentraînement continu</li>
+                <li>Data lake pour métadonnées musicales</li>
+                <li>Passerelle API sécurisée</li>
+                <li>Pipeline CI/CD automatisé</li>
+                <li>Infrastructure-as-code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
+          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
+            <BarChart className="mr-2 h-6 w-6 text-pink-500" />
+            Critères de Succès
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Performance</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>95% satisfaction utilisateur</li>
+                <li>API < 100ms de réponse</li>
+                <li>10M+ chansons/jour</li>
+                <li>30% plus efficace</li>
+              </ul>
+            </div>
+            <div className="bg-purple-900/40 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Business</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>3+ plateformes partenaires</li>
+                <li>2+ brevets déposés</li>
+                <li>Intégration multi-plateformes</li>
+                <li>Modèle B2B établi</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
