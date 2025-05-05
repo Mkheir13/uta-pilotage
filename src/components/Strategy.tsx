@@ -182,7 +182,7 @@ const Strategy: React.FC = () => {
               <h4 className="text-pink-400 font-semibold mb-2">Performance</h4>
               <ul className="text-gray-400 text-sm space-y-2">
                 <li>95% satisfaction utilisateur</li>
-                <li>API < 100ms de réponse</li>
+                <li>Temps de réponse API inférieur à 100ms</li>
                 <li>10M+ chansons/jour</li>
                 <li>30% plus efficace</li>
               </ul>
