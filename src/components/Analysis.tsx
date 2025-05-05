@@ -6,7 +6,7 @@ const Analysis: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'swot' | 'pestel'>('swot');
 
   return (
-    <SectionContainer id="analysis" title="SWOT & PESTEL Analysis">
+    <SectionContainer id="analysis" title="Analyse SWOT & PESTEL">
       <div className="flex justify-center mb-8">
         <div className="inline-flex rounded-lg p-1 bg-purple-900/30 backdrop-blur-sm">
           <button
