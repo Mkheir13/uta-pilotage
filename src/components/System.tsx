@@ -87,21 +87,21 @@ const System: React.FC = () => {
             
             <div className="bg-purple-900/40 p-4 rounded-xl">
               <div className="flex justify-between items-center">
-                <p className="text-pink-400 font-semibold">Processing Pipeline</p>
+                <p className="text-pink-400 font-semibold">Pipeline de Traitement</p>
                 <span className="text-xs px-2 py-1 bg-pink-500/20 text-pink-300 rounded-full">ML & Streaming</span>
               </div>
               <ul className="text-gray-400 text-sm mt-1 space-y-1">
                 <li className="flex items-center">
                   <span className="text-pink-500 mr-2">➔</span>
-                  <span>Kafka for event streaming</span>
+                  <span>Kafka pour le streaming d'événements</span>
                 </li>
                 <li className="flex items-center">
                   <span className="text-pink-500 mr-2">➔</span>
-                  <span>Spark for distributed processing</span>
+                  <span>Spark pour le traitement distribué</span>
                 </li>
                 <li className="flex items-center">
                   <span className="text-pink-500 mr-2">➔</span>
-                  <span>TensorFlow for recommendation models</span>
+                  <span>TensorFlow pour les modèles de recommandation</span>
                 </li>
               </ul>
             </div>
