@@ -100,15 +100,15 @@ const Analysis: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-amber-500/20 hover:border-amber-500/30 transition-all">
             <h3 className="text-2xl font-bold mb-4 text-amber-400 flex items-center">
               <BarChart className="mr-2 h-6 w-6" />
-              Threats
+              Menaces
             </h3>
             <ul className="space-y-3">
               {[
-                'Major streaming platforms developing similar features',
-                'Changes to third-party API terms and access',
-                'Privacy regulations affecting data collection',
-                'High customer acquisition costs in saturated markets',
-                'Established competitors with larger user bases',
+                'Les grandes plateformes de streaming développant des fonctionnalités similaires',
+                'Modifications des conditions d\'accès aux API tierces',
+                'Réglementations sur la confidentialité affectant la collecte de données',
+                'Coûts d\'acquisition élevés sur des marchés saturés',
+                'Concurrents établis avec une base d\'utilisateurs plus importante',
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-amber-500 mr-2">!</span>
@@ -124,114 +124,92 @@ const Analysis: React.FC = () => {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-purple-500/30">
-                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Factor</th>
+                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Facteur</th>
                   <th className="py-3 px-4 text-left text-gray-300 font-semibold">Impact</th>
-                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Opportunity/Threat</th>
+                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Opportunité/Menace</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   {
-                    category: 'Political',
-                    factor: 'Digital content regulations',
-                    impact: 'Varying regulations across regions may require content filtering',
-                    type: 'Threat',
+                    category: 'Politique',
+                    factor: 'Réglementations sur le contenu numérique',
+                    impact: 'Réglementations variables selon les régions nécessitant un filtrage du contenu',
+                    type: 'Menace',
                     color: 'text-amber-400',
                   },
                   {
-                    category: 'Political',
-                    factor: 'Open internet policies',
-                    impact: 'Enables global content delivery without restrictions',
-                    type: 'Opportunity',
+                    category: 'Politique',
+                    factor: 'Politiques d\'internet ouvert',
+                    impact: 'Permet la diffusion mondiale de contenu sans restrictions',
+                    type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
-                    category: 'Economic',
-                    factor: 'Growth in streaming subscriptions',
-                    impact: 'Larger potential user base for integration',
-                    type: 'Opportunity',
+                    category: 'Économique',
+                    factor: 'Croissance des abonnements streaming',
+                    impact: 'Base d\'utilisateurs potentiels plus large pour l\'intégration',
+                    type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
-                    category: 'Economic',
-                    factor: 'Recession affecting discretionary spending',
-                    impact: 'Reduced willingness to pay for premium music services',
-                    type: 'Threat',
+                    category: 'Économique',
+                    factor: 'Récession affectant les dépenses discrétionnaires',
+                    impact: 'Réduction de la volonté de payer pour les services musicaux premium',
+                    type: 'Menace',
                     color: 'text-amber-400',
                   },
                   {
                     category: 'Social',
-                    factor: 'Growing interest in personalized experiences',
-                    impact: 'Higher demand for tailored music recommendations',
-                    type: 'Opportunity',
+                    factor: 'Intérêt croissant pour les expériences personnalisées',
+                    impact: 'Demande accrue de recommandations musicales personnalisées',
+                    type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
                     category: 'Social',
-                    factor: 'Music as social currency',
-                    impact: 'Increased sharing and social features adoption',
-                    type: 'Opportunity',
+                    factor: 'La musique comme monnaie sociale',
+                    impact: 'Adoption accrue des fonctionnalités de partage et sociales',
+                    type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
-                    category: 'Technological',
-                    factor: 'AI and ML advances',
-                    impact: 'Better recommendation algorithms possible',
-                    type: 'Opportunity',
+                    category: 'Technologique',
+                    factor: 'Avancées en IA et ML',
+                    impact: 'Possibilité d\'algorithmes de recommandation améliorés',
+                    type: 'Opportunité',
                     color: 'text-green-400',
                   },
                   {
-                    category: 'Technological',
-                    factor: 'API changes by streaming services',
-                    impact: 'May require frequent adaptation of integration code',
-                    type: 'Threat',
+                    category: 'Technologique',
+                    factor: 'Modifications des API par les services de streaming',
+                    impact: 'Peut nécessiter une adaptation fréquente du code d\'intégration',
+                    type: 'Menace',
                     color: 'text-amber-400',
                   },
                   {
-                    category: 'Environmental',
-                    factor: 'Cloud computing energy consumption',
-                    impact: 'Higher costs for sustainable data center options',
-                    type: 'Threat',
+                    category: 'Environnemental',
+                    factor: 'Consommation énergétique du cloud computing',
+                    impact: 'Coûts plus élevés pour les options de centres de données durables',
+                    type: 'Menace',
                     color: 'text-amber-400',
                   },
                   {
-                    category: 'Legal',
-                    factor: 'GDPR and data privacy laws',
-                    impact: 'Stricter handling of user preference data required',
-                    type: 'Threat',
+                    category: 'Légal',
+                    factor: 'RGPD et lois sur la protection des données',
+                    impact: 'Gestion plus stricte des données de préférences utilisateur requise',
+                    type: 'Menace',
                     color: 'text-amber-400',
                   },
-                  {
-                    category: 'Legal',
-                    factor: 'Music licensing agreements',
-                    impact: 'Complex legal landscape for music recommendations',
-                    type: 'Threat',
-                    color: 'text-amber-400',
-                  },
-                ].map((row, index) => (
-                  <tr
-                    key={index}
-                    className="border-b border-purple-500/10 hover:bg-purple-900/20"
-                  >
+                ].map((item, index) => (
+                  <tr key={index} className="border-b border-purple-500/10 hover:bg-purple-900/20">
                     <td className="py-3 px-4">
-                      <div>
-                        <span className="text-pink-400 text-xs font-medium block">
-                          {row.category}
-                        </span>
-                        <span className="text-white font-medium">{row.factor}</span>
-                      </div>
+                      <div className="font-medium text-white">{item.category}</div>
+                      <div className="text-sm text-gray-300">{item.factor}</div>
                     </td>
-                    <td className="py-3 px-4 text-gray-300">{row.impact}</td>
+                    <td className="py-3 px-4 text-gray-300">{item.impact}</td>
                     <td className="py-3 px-4">
-                      <span
-                        className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                          row.color === 'text-green-400'
-                            ? 'bg-green-900/30 text-green-400'
-                            : 'bg-amber-900/30 text-amber-400'
-                        }`}
-                      >
-                        {row.type}
-                      </span>
+                      <span className={`${item.color} font-medium`}>{item.type}</span>
                     </td>
                   </tr>
                 ))}
