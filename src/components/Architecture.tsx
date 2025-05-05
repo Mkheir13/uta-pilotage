@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionContainer from './layout/SectionContainer';
-import { Layers, Users, Database, Shield, Cloud, Code, GitBranch, Monitor } from 'lucide-react';
+import { Layers, Users, Database, Shield, Cloud, Code, GitBranch } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 const Architecture: React.FC = () => {
   const layers = [
@@ -119,56 +120,15 @@ const Architecture: React.FC = () => {
   ];
 
   const security = {
-    title: 'Architecture de Sécurité',
-    icon: <Shield className="h-6 w-6 text-pink-500" />,
+    icon: <Shield className="h-6 w-6 text-purple-400" />,
+    title: 'Sécurité',
+    subtitle: 'Sécurité',
     sections: [
-      {
-        subtitle: 'Authentification',
-        items: [
-          'OAuth2 et OIDC',
-          'Contrôle d\'accès RBAC',
-          'Multi-facteurs admin'
-        ]
-      },
-      {
-        subtitle: 'Protection des Données',
-        items: [
-          'Chiffrement bout-en-bout',
-          'Anonymisation RGPD',
-          'Conformité internationale'
-        ]
-      },
-      {
-        subtitle: 'Sécurité Réseau',
-        items: [
-          'Passerelle API sécurisée',
-          'Protection DDoS',
-          'WAF avancé'
-        ]
-      }
-    ]
-  };
-
-  const monitoring = {
-    title: 'Surveillance & Outils',
-    icon: <Monitor className="h-6 w-6 text-pink-500" />,
-    sections: [
-      {
-        subtitle: 'Monitoring',
-        items: [
-          'Prometheus & Grafana',
-          'ELK Stack pour logs',
-          'Alerting intelligent'
-        ]
-      },
-      {
-        subtitle: 'Service Mesh',
-        items: [
-          'Istio pour communication',
-          'Gestion des secrets',
-          'Traçabilité complète'
-        ]
-      }
+      'Encryptage SSL/TLS',
+      'Validation des entrées',
+      'Protection CSRF/XSS',
+      'Audit de vulnérabilités',
+      'Chiffrement des données',
     ]
   };
 
@@ -208,8 +168,8 @@ const Architecture: React.FC = () => {
           ))}
         </div>
 
-        {/* Sécurité et Monitoring */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Sécurité */}
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
           {/* Sécurité */}
           <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-6 rounded-2xl backdrop-blur-sm border border-pink-500/30">
             <div className="flex items-center mb-6">
@@ -222,44 +182,99 @@ const Architecture: React.FC = () => {
             <div className="space-y-4">
               {security.sections.map((section, index) => (
                 <div key={index} className="bg-black/20 p-4 rounded-xl">
-                  <h4 className="text-pink-400 font-semibold mb-2">{section.subtitle}</h4>
-                  <ul className="space-y-2">
-                    {section.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <span className="text-pink-500 mr-2">▷</span>
-                        <span className="text-gray-300 text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <h4 className="text-pink-400 font-semibold mb-2">{section}</h4>
                 </div>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Monitoring */}
-          <div className="bg-gradient-to-r from-purple-900/40 to-pink-900/40 p-6 rounded-2xl backdrop-blur-sm border border-pink-500/30">
-            <div className="flex items-center mb-6">
-              {monitoring.icon}
-              <h3 className="text-xl font-bold ml-3 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
-                {monitoring.title}
-              </h3>
+        <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">Diagramme d'Architecture Cible</h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {/* Frontend */}
+          <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3">
+              {layers[0].icon}
+              <h4 className="text-white font-bold ml-2">{layers[0].title}</h4>
             </div>
-
-            <div className="space-y-4">
-              {monitoring.sections.map((section, index) => (
-                <div key={index} className="bg-black/20 p-4 rounded-xl">
-                  <h4 className="text-pink-400 font-semibold mb-2">{section.subtitle}</h4>
-                  <ul className="space-y-2">
-                    {section.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <span className="text-pink-500 mr-2">▷</span>
-                        <span className="text-gray-300 text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <p className="text-pink-400 text-sm mb-3">{layers[0].sections[0].subtitle}</p>
+            <ul className="space-y-2">
+              {layers[0].sections[0].items.map((section, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">{section}</span>
+                </li>
               ))}
+            </ul>
+          </div>
+          
+          {/* Backend */}
+          <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3">
+              {layers[1].icon}
+              <h4 className="text-white font-bold ml-2">{layers[1].title}</h4>
             </div>
+            <p className="text-pink-400 text-sm mb-3">{layers[1].sections[0].subtitle}</p>
+            <ul className="space-y-2">
+              {layers[1].sections[0].items.map((section, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">{section}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* IA */}
+          <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3">
+              {layers[1].icon}
+              <h4 className="text-white font-bold ml-2">{layers[1].sections[1].subtitle}</h4>
+            </div>
+            <p className="text-pink-400 text-sm mb-3">{layers[1].sections[1].subtitle}</p>
+            <ul className="space-y-2">
+              {layers[1].sections[1].items.map((section, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">{section}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Infrastructure */}
+          <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3">
+              {layers[3].icon}
+              <h4 className="text-white font-bold ml-2">{layers[3].title}</h4>
+            </div>
+            <p className="text-pink-400 text-sm mb-3">{layers[3].sections[0].subtitle}</p>
+            <ul className="space-y-2">
+              {layers[3].sections[0].items.map((section, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">{section}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Sécurité */}
+          <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+            <div className="flex items-center mb-3">
+              {security.icon}
+              <h4 className="text-white font-bold ml-2">{security.title}</h4>
+            </div>
+            <p className="text-pink-400 text-sm mb-3">{security.subtitle}</p>
+            <ul className="space-y-2">
+              {security.sections.map((section, index) => (
+                <li key={index} className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-300 text-sm">{section}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

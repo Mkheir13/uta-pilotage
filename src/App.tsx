@@ -10,7 +10,6 @@ import Roadmap from './components/Roadmap';
 import Architecture from './components/Architecture';
 import Continuity from './components/Continuity';
 import Costs from './components/Costs';
-import Monitoring from './components/Monitoring';
 import Footer from './components/Footer';
 import './styles/animations.css';
 
@@ -29,7 +28,6 @@ function App() {
         <Architecture />
         <Continuity />
         <Costs />
-        <Monitoring />
       </div>
       <Footer />
     </div>

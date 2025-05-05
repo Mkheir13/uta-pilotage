@@ -6,17 +6,16 @@ interface NavItem {
   href: string;
 }
 
-const navItems: NavItem[] = [
+const menuItems = [
   { label: 'Introduction', href: '#introduction' },
-  { label: 'Organization', href: '#organization' },
-  { label: 'System', href: '#system' },
-  { label: 'Analysis', href: '#analysis' },
-  { label: 'Strategy', href: '#strategy' },
+  { label: 'Organisation', href: '#organization' },
+  { label: 'Système', href: '#system' },
+  { label: 'Analyse', href: '#analysis' },
+  { label: 'Stratégie', href: '#strategy' },
   { label: 'Roadmap', href: '#roadmap' },
   { label: 'Architecture', href: '#architecture' },
-  { label: 'Continuity', href: '#continuity' },
-  { label: 'Costs', href: '#costs' },
-  { label: 'Monitoring', href: '#monitoring' },
+  { label: 'Continuité', href: '#continuity' },
+  { label: 'Coûts', href: '#costs' },
 ];
 
 const Navbar: React.FC = () => {
@@ -61,7 +60,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
+              {menuItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
@@ -95,7 +94,7 @@ const Navbar: React.FC = () => {
         } overflow-hidden`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/80 backdrop-blur-lg">
-          {navItems.map((item) => (
+          {menuItems.map((item) => (
             <a
               key={item.label}
               href={item.href}

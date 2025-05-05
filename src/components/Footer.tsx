@@ -58,7 +58,6 @@ const Footer: React.FC = () => {
                 { label: 'Architecture', href: '#architecture' },
                 { label: 'Continuité', href: '#continuity' },
                 { label: 'Coûts', href: '#costs' },
-                { label: 'Surveillance', href: '#monitoring' },
               ].map((link, index) => (
                 <li key={index}>
                   <a 

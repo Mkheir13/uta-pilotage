@@ -143,12 +143,24 @@ const System: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 z-0"></div>
               <div className="relative z-10 p-4">
                 <p className="text-pink-400 font-semibold mb-2">Monitoring</p>
-                <ul className="text-gray-400 text-sm space-y-1">
-                  <li>Système de logs détaillés</li>
-                  <li>Mécanismes de fallback</li>
-                  <li>Traçage des exceptions</li>
-                  <li>Feedback visuel utilisateur</li>
-                </ul>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div>
+                    <p className="text-pink-400 font-semibold mb-2">Authentification</p>
+                    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+                      <li>Intégration OAuth2 avec Spotify</li>
+                      <li>JWT pour la sécurité des sessions</li>
+                      <li>RBAC pour contrôle d'accès</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-pink-400 font-semibold mb-2">Déploiement</p>
+                    <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+                      <li>AWS + Docker + Kubernetes</li>
+                      <li>CI/CD avec GitHub Actions</li>
+                      <li>Infrastructure as Code (Terraform)</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
