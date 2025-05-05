@@ -4,103 +4,89 @@ import { DollarSign, TrendingUp, BarChart } from 'lucide-react';
 
 const Costs: React.FC = () => {
   return (
-    <SectionContainer id="costs" title="Cost Estimation">
+    <SectionContainer id="costs" title="Estimation des Coûts">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20">
           <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
             <DollarSign className="mr-2 h-6 w-6 text-pink-500" />
-            Infrastructure & Services Costs
+            Coûts d'Infrastructure & Services
           </h3>
           
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-purple-500/30">
-                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Category</th>
-                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Component</th>
-                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Monthly Cost</th>
-                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Annual Cost</th>
+                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Catégorie</th>
+                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Composant</th>
+                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Coût Mensuel</th>
+                  <th className="py-3 px-4 text-left text-gray-300 font-semibold">Coût Annuel</th>
                   <th className="py-3 px-4 text-left text-gray-300 font-semibold">Notes</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   {
-                    category: 'Cloud Computing',
-                    component: 'AWS EC2 Instances',
-                    monthly: '$1,800',
-                    annual: '$21,600',
-                    notes: '12 instances across 3 regions',
+                    category: 'Infrastructure',
+                    component: 'AWS EC2 (20 instances)',
+                    monthly: '$3,000',
+                    annual: '$36,000',
+                    notes: 'Serveurs de production et développement',
                   },
                   {
-                    category: 'Cloud Computing',
-                    component: 'GCP Compute Engine',
-                    monthly: '$1,200',
-                    annual: '$14,400',
-                    notes: 'Backup infrastructure',
+                    category: 'Base de données',
+                    component: 'AWS RDS (Multi-AZ)',
+                    monthly: '$2,000',
+                    annual: '$24,000',
+                    notes: 'Base de données PostgreSQL hautement disponible',
                   },
                   {
-                    category: 'Databases',
-                    component: 'AWS RDS (PostgreSQL)',
-                    monthly: '$900',
-                    annual: '$10,800',
-                    notes: 'Primary relational database',
+                    category: 'Cache',
+                    component: 'AWS ElastiCache',
+                    monthly: '$1,500',
+                    annual: '$18,000',
+                    notes: 'Cache Redis pour les performances',
                   },
                   {
-                    category: 'Databases',
-                    component: 'MongoDB Atlas',
+                    category: 'Stockage',
+                    component: 'AWS S3',
                     monthly: '$800',
                     annual: '$9,600',
-                    notes: 'Document store for metadata',
+                    notes: 'Stockage des médias et sauvegardes',
                   },
                   {
-                    category: 'Databases',
-                    component: 'Redis Enterprise',
-                    monthly: '$500',
-                    annual: '$6,000',
-                    notes: 'Caching layer',
-                  },
-                  {
-                    category: 'Storage',
-                    component: 'S3 / Cloud Storage',
-                    monthly: '$400',
-                    annual: '$4,800',
-                    notes: 'Object storage for assets',
-                  },
-                  {
-                    category: 'ML/AI',
-                    component: 'SageMaker / Vertex AI',
-                    monthly: '$2,500',
-                    annual: '$30,000',
-                    notes: 'ML model training and serving',
+                    category: 'Analytics',
+                    component: 'Snowflake',
+                    monthly: '$800',
+                    annual: '$9,600',
+                    notes: 'Entrepôt de données et analyses',
                   },
                   {
                     category: 'CDN',
                     component: 'Cloudflare Enterprise',
                     monthly: '$600',
                     annual: '$7,200',
-                    notes: 'Content delivery, DDoS protection',
+                    notes: 'Distribution de contenu, protection DDoS',
                   },
                   {
-                    category: 'Monitoring',
+                    category: 'Surveillance',
                     component: 'Datadog',
                     monthly: '$700',
                     annual: '$8,400',
-                    notes: 'Observability platform',
+                    notes: 'Plateforme d\'observabilité',
                   },
                   {
-                    category: 'Security',
+                    category: 'Sécurité',
                     component: 'Auth0',
                     monthly: '$500',
                     annual: '$6,000',
-                    notes: 'Identity management',
+                    notes: 'Gestion des identités',
                   },
                   {
-                    category: 'Domains',
-                    component: 'DNS & Certificates',
+                    category: 'Domaines',
+                    component: 'DNS & Certificats',
                     monthly: '$50',
                     annual: '$600',
-                    notes: 'Domain registration, SSL certs',
+                    notes: 'Enregistrement de domaine, certificats SSL',
                   },
                   {
                     category: '',
@@ -135,41 +121,41 @@ const Costs: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20">
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
               <TrendingUp className="mr-2 h-5 w-5 text-pink-500" />
-              Scaling Projections
+              Projections d'Échelle
             </h3>
             
             <div className="space-y-4">
               <div className="bg-black/20 p-3 rounded-xl">
                 <div className="flex justify-between mb-1">
-                  <span className="text-white text-sm font-medium">6 Months</span>
+                  <span className="text-white text-sm font-medium">6 Mois</span>
                   <span className="text-pink-400 text-sm">$15,000/mo</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: '50%' }}></div>
                 </div>
-                <div className="mt-2 text-xs text-gray-400">~100k active users</div>
+                <div className="mt-2 text-xs text-gray-400">~100k utilisateurs actifs</div>
               </div>
               
               <div className="bg-black/20 p-3 rounded-xl">
                 <div className="flex justify-between mb-1">
-                  <span className="text-white text-sm font-medium">12 Months</span>
+                  <span className="text-white text-sm font-medium">12 Mois</span>
                   <span className="text-pink-400 text-sm">$25,000/mo</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: '75%' }}></div>
                 </div>
-                <div className="mt-2 text-xs text-gray-400">~500k active users</div>
+                <div className="mt-2 text-xs text-gray-400">~500k utilisateurs actifs</div>
               </div>
               
               <div className="bg-black/20 p-3 rounded-xl">
                 <div className="flex justify-between mb-1">
-                  <span className="text-white text-sm font-medium">24 Months</span>
+                  <span className="text-white text-sm font-medium">24 Mois</span>
                   <span className="text-pink-400 text-sm">$40,000/mo</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: '100%' }}></div>
                 </div>
-                <div className="mt-2 text-xs text-gray-400">~2M active users</div>
+                <div className="mt-2 text-xs text-gray-400">~2M utilisateurs actifs</div>
               </div>
             </div>
           </div>
@@ -177,17 +163,17 @@ const Costs: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20">
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
               <BarChart className="mr-2 h-5 w-5 text-pink-500" />
-              Cost Optimization
+              Optimisation des Coûts
             </h3>
             
             <ul className="space-y-3">
               {[
-                'Reserved instances for 40% cost reduction',
-                'Autoscaling based on traffic patterns',
-                'Multi-tier storage strategy for data lifecycle',
-                'Rightsizing instances based on utilization data',
-                'Spot instances for non-critical workloads',
-                'Serverless architecture for certain microservices',
+                'Instances réservées pour réduction de coût de 40%',
+                'Autoscaling basé sur les motifs de trafic',
+                'Stratégie de stockage multiniveau pour cycle de vie des données',
+                'Redimensionnement des instances basé sur les données d\'utilisation',
+                'Instances Spot pour charges de travail non critiques',
+                'Architecture Serverless pour certains microservices',
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
@@ -197,9 +183,9 @@ const Costs: React.FC = () => {
             </ul>
             
             <div className="mt-4 p-3 bg-gradient-to-r from-green-900/20 to-green-900/10 rounded-xl">
-              <p className="text-green-400 font-medium">Estimated Annual Savings</p>
+              <p className="text-green-400 font-medium">Économies annuelles estimées</p>
               <p className="text-white text-xl font-bold">$35,000 - $45,000</p>
-              <p className="text-gray-400 text-sm">~30% reduction with optimizations</p>
+              <p className="text-gray-400 text-sm">~30% de réduction avec des optimisations</p>
             </div>
           </div>
         </div>
