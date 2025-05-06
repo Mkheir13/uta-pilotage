@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SectionContainer from './layout/SectionContainer';
-import { Target, Compass, BrainCircuit, Check, Globe, Brain, Layout, BarChart } from 'lucide-react';
+import { Target, Compass, BrainCircuit, Check, Globe, Brain, Layout, BarChart, AlertTriangle, ArrowRight, Star } from 'lucide-react';
 
 const Strategy: React.FC = () => {
   const [activeStrategy, setActiveStrategy] = useState<number>(2);
@@ -62,81 +62,181 @@ const Strategy: React.FC = () => {
 
   return (
     <SectionContainer id="strategy" title="Stratégie Commerciale">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      {/* Introduction */}
+      <div className="mb-10 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20">
+        <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+          Justification des Stratégies
+        </h3>
+        <p className="text-gray-300 mb-4">
+          Suite à notre analyse SWOT et PESTEL, nous avons identifié trois stratégies d'entreprise potentielles pour UTA.
+          Chacune répond à des opportunités ou menaces spécifiques et s'appuie sur nos forces ou cherche à pallier nos faiblesses.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+        {/* Stratégie 1 */}
         <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
-            <Globe className="mr-2 h-6 w-6 text-pink-500" />
-            Intégration Multi-Plateformes
-          </h3>
+          <div className="flex items-center mb-4">
+            <Globe className="h-6 w-6 text-blue-500 mr-2" />
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+              Intégration Multi-Plateformes
+            </h3>
+          </div>
+          
           <div className="space-y-4">
-            <p className="text-gray-300">Élargir l'intégration au-delà de Spotify pour inclure d'autres plateformes de streaming musical</p>
-            <div className="bg-purple-900/40 p-4 rounded-xl">
-              <h4 className="text-pink-400 font-semibold mb-2">Avantages</h4>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>Base d'utilisateurs potentiels plus large</li>
-                <li>Réduction de la dépendance à Spotify</li>
-                <li>Recommandations plus riches et diversifiées</li>
+            <div className="bg-blue-900/20 p-4 rounded-xl">
+              <h4 className="text-blue-400 font-semibold mb-2">Justification SWOT</h4>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Atténue notre <b>faiblesse</b> de dépendance à Spotify</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Exploite l'<b>opportunité</b> d'intégration avec d'autres services</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Réduit la <b>menace</b> des modifications de l'API Spotify</span>
+                </li>
               </ul>
             </div>
-            <div className="bg-purple-900/40 p-4 rounded-xl">
-              <h4 className="text-pink-400 font-semibold mb-2">Limitations</h4>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>Complexité des intégrations multiples</li>
-                <li>Coûts de développement élevés</li>
-                <li>Concurrence des systèmes natifs</li>
+            
+            <div className="bg-blue-900/20 p-4 rounded-xl">
+              <h4 className="text-blue-400 font-semibold mb-2">Justification PESTEL</h4>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Profite de la croissance du marché global du streaming</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>S'adapte à l'évolution des API de différentes plateformes</span>
+                </li>
               </ul>
+            </div>
+            
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm italic">Diversifier nos sources de données et élargir notre base d'utilisateurs potentiels en intégrant plusieurs plateformes.</p>
+              <div className="flex items-center">
+                <AlertTriangle className="h-4 w-4 text-yellow-500 mr-2" />
+                <p className="text-gray-400 text-sm">Complexité élevée d'intégration et coûts de développement importants</p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
-            <Brain className="mr-2 h-6 w-6 text-pink-500" />
-            Excellence Algorithmique
-          </h3>
+        
+        {/* Stratégie 2 - CHOISIE */}
+        <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-pink-500/30 hover:border-pink-500/50 transition-all relative overflow-hidden">
+          {/* Badge stratégie choisie */}
+          <div className="absolute -top-1 -right-1 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-bold py-1 px-3 rounded-bl-lg">
+            <div className="flex items-center">
+              <Star className="h-3 w-3 mr-1" fill="white" />
+              <span>Stratégie choisie</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center mb-4">
+            <Brain className="h-6 w-6 text-pink-500 mr-2" />
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+              Excellence Algorithmique
+            </h3>
+          </div>
+          
           <div className="space-y-4">
-            <p className="text-gray-300">Approfondir l'expertise en algorithmes de recommandation et en capacités d'apprentissage automatique</p>
-            <div className="bg-purple-900/40 p-4 rounded-xl">
-              <h4 className="text-pink-400 font-semibold mb-2">Avantages</h4>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>Qualité de recommandation supérieure</li>
-                <li>Propriété intellectuelle brevetable</li>
-                <li>Solutions en marque blanche</li>
+            <div className="bg-pink-900/20 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Justification SWOT</h4>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-pink-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>S'appuie sur notre <b>force</b> d'algorithme transparent et explicable</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-pink-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Répond à l'<b>opportunité</b> de demande pour des recommandations personnalisables</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-pink-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Combat la <b>menace</b> de la concurrence des algorithmes existants</span>
+                </li>
               </ul>
             </div>
-            <div className="bg-purple-900/40 p-4 rounded-xl">
-              <h4 className="text-pink-400 font-semibold mb-2">Limitations</h4>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>Coûts élevés de R&D</li>
-                <li>Temps de développement long</li>
-                <li>Ressources computationnelles importantes</li>
+            
+            <div className="bg-pink-900/20 p-4 rounded-xl">
+              <h4 className="text-pink-400 font-semibold mb-2">Justification PESTEL</h4>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-pink-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Capitalise sur les progrès en algorithmes de recommandation (Technologique)</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-pink-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Répond à l'évolution des tendances d'écoute (Social)</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-pink-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Permet un potentiel de revenus via propriété intellectuelle (Économique)</span>
+                </li>
               </ul>
+            </div>
+            
+            <div className="space-y-2 bg-pink-500/10 p-3 rounded-lg">
+              <p className="text-white text-sm">
+                <b>Pourquoi cette stratégie est choisie:</b> L'excellence algorithmique est notre atout différenciateur le plus puissant dans un marché concurrentiel. Elle nous permettra de créer une propriété intellectuelle valorisable et de proposer une solution véritablement supérieure aux recommandations existantes.
+              </p>
             </div>
           </div>
         </div>
-
+        
+        {/* Stratégie 3 */}
         <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all">
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text flex items-center">
-            <Layout className="mr-2 h-6 w-6 text-pink-500" />
-            Expérience Utilisateur
-          </h3>
+          <div className="flex items-center mb-4">
+            <Layout className="h-6 w-6 text-purple-500 mr-2" />
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-indigo-500 text-transparent bg-clip-text">
+              Expérience Utilisateur
+            </h3>
+          </div>
+          
           <div className="space-y-4">
-            <p className="text-gray-300">Créer l'interface utilisateur la plus intuitive et engageante pour la découverte musicale</p>
-            <div className="bg-purple-900/40 p-4 rounded-xl">
-              <h4 className="text-pink-400 font-semibold mb-2">Avantages</h4>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>Barrière d'adoption réduite</li>
-                <li>Meilleure rétention utilisateur</li>
-                <li>Différenciation par le design</li>
+            <div className="bg-purple-900/20 p-4 rounded-xl">
+              <h4 className="text-purple-400 font-semibold mb-2">Justification SWOT</h4>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Développe notre <b>force</b> d'interface React intuitive</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Exploite l'<b>opportunité</b> de différenciation par l'expérience</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Compense notre <b>faiblesse</b> avec les genres de niche par une interface intuitive</span>
+                </li>
               </ul>
             </div>
-            <div className="bg-purple-900/40 p-4 rounded-xl">
-              <h4 className="text-pink-400 font-semibold mb-2">Limitations</h4>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>Risque de prioriser la forme</li>
-                <li>Métriques subjectives</li>
-                <li>Fonctionnalités réplicables</li>
+            
+            <div className="bg-purple-900/20 p-4 rounded-xl">
+              <h4 className="text-purple-400 font-semibold mb-2">Justification PESTEL</h4>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Répond à la communauté existante d'utilisateurs Spotify (Social)</span>
+                </li>
+                <li className="flex items-start">
+                  <ArrowRight className="h-4 w-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                  <span>Facilite la conformité RGPD par une interface transparente (Légal)</span>
+                </li>
               </ul>
+            </div>
+            
+            <div className="space-y-2">
+              <p className="text-gray-400 text-sm italic">Prioritiser une interface intuitive, engageante et esthétique pour différencier UTA des services concurrents.</p>
+              <div className="flex items-center">
+                <AlertTriangle className="h-4 w-4 text-yellow-500 mr-2" />
+                <p className="text-gray-400 text-sm">Risque de prioriser la forme sur la fonction et design facilement imitable</p>
+              </div>
             </div>
           </div>
         </div>
