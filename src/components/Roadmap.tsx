@@ -28,8 +28,8 @@ const Roadmap: React.FC = () => {
     },
     {
       title: 'Mars - Développement des algorithmes de base',
-      status: 'in-progress',
-      progress: 60,
+      status: 'completed',
+      progress: 100,
       items: [
         'Système d\'extraction des caractéristiques musicales',
         'Cadre de modélisation des préférences utilisateur',
@@ -39,25 +39,36 @@ const Roadmap: React.FC = () => {
     },
     {
       title: 'Avril - MVP Release',
-      status: 'upcoming',
-      progress: 0,
+      status: 'completed',
+      progress: 100,
       items: [
         'Moteur de recommandation (80% précision)',
         'Interface utilisateur de base',
         'Intégration complète Spotify',
         'Documentation technique et protocole de test'
       ]
+    },
+    {
+      title: 'Mai - Optimisation & Expansion',
+      status: 'in-progress',
+      progress: 45,
+      items: [
+        'Intégration avec l\'API Apple Music',
+        'Amélioration de la précision algorithmique (85%)',
+        'Mise en place du système de partage social',
+        'Démarrage du programme de test bêta'
+      ]
     }
   ];
 
   const futurePhases = [
     {
-      title: 'Phase II: Mai-Juillet',
+      title: 'Phase II: Juin-Juillet',
       items: [
-        'Intégrations avec d\'autres API musicales',
+        'Intégration avec Deezer et Amazon Music',
         'Précision algorithmique à 90%',
-        'Fonctionnalités de partage social',
-        'Programme de test bêta'
+        'Étude utilisateur et ajustements UX',
+        'Extension du programme bêta'
       ]
     },
     {
@@ -88,7 +99,11 @@ const Roadmap: React.FC = () => {
           {phases.map((phase, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-purple-500/20 hover:border-pink-500/30 transition-all"
+              className={`bg-white/5 backdrop-blur-md p-6 rounded-2xl border ${
+                phase.status === 'in-progress' 
+                  ? 'border-pink-500/30 shadow-lg shadow-pink-500/10' 
+                  : 'border-purple-500/20 hover:border-pink-500/30'
+              } transition-all`}
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
@@ -99,7 +114,7 @@ const Roadmap: React.FC = () => {
                     <CheckCircle2 className="h-5 w-5 text-green-500" />
                   )}
                   {phase.status === 'in-progress' && (
-                    <Clock className="h-5 w-5 text-yellow-500" />
+                    <Clock className="h-5 w-5 text-yellow-500 animate-pulse" />
                   )}
                   {phase.status === 'upcoming' && (
                     <Circle className="h-5 w-5 text-gray-500" />
