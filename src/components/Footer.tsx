@@ -1,49 +1,49 @@
 import React from 'react';
-import { Music, Github, Mail, Twitter } from 'lucide-react';
+import utaLogo from '../assets/uta.png';
+import { Github, Mail, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-gradient-to-r from-purple-900 to-pink-900 py-12">
+    <footer className="bg-uta-black border-t border-uta-red/20 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center mb-4">
-              <Music className="h-8 w-8 text-pink-500" />
-              <span className="ml-2 text-2xl font-bold text-white">Universal Tune Assistant</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div className="flex items-center">
+              <img src={utaLogo} alt="UTA Logo" className="h-8 w-auto" />
+              <span className="ml-2 text-xl font-bold text-uta-red">UTA</span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
-              Revolutionizing the way people discover and experience music through 
-              personalized AI-driven recommendations and cross-platform integration.
+            <p className="mt-4 text-uta-white/60 max-w-xs">
+              La prochaine génération de recommandation musicale propulsée par l'intelligence artificielle.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                <Github className="h-6 w-6" />
+            <div className="mt-6 flex space-x-4">
+              <a href="#" className="text-uta-white/60 hover:text-uta-red">
+                <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                <Twitter className="h-6 w-6" />
+              <a href="#" className="text-uta-white/60 hover:text-uta-red">
+                <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                <Mail className="h-6 w-6" />
+              <a href="#" className="text-uta-white/60 hover:text-uta-red">
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Projet</h3>
+            <h3 className="text-uta-white font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               {[
-                { label: 'Introduction', href: '#introduction' },
-                { label: 'Organisation', href: '#organization' },
-                { label: 'Système', href: '#system' },
-                { label: 'Analyse', href: '#analysis' },
-                { label: 'Stratégie', href: '#strategy' },
-              ].map((link, index) => (
-                <li key={index}>
+                { name: 'Introduction', href: '#introduction' },
+                { name: 'Équipe', href: '#organization' },
+                { name: 'Système', href: '#system' },
+                { name: 'Stratégie', href: '#strategy' },
+                { name: 'Roadmap', href: '#roadmap' },
+              ].map((link) => (
+                <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-uta-white/60 hover:text-uta-red transition-colors"
                   >
-                    {link.label}
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -51,20 +51,20 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Documentation</h3>
+            <h3 className="text-uta-white font-semibold mb-4">Documentation</h3>
             <ul className="space-y-2">
               {[
-                { label: 'Feuille de Route', href: '#roadmap' },
-                { label: 'Architecture', href: '#architecture' },
-                { label: 'Continuité', href: '#continuity' },
-                { label: 'Coûts', href: '#costs' },
-              ].map((link, index) => (
-                <li key={index}>
+                { name: 'Architecture', href: '#architecture' },
+                { name: 'PRA / PCA', href: '#continuity' },
+                { name: 'Coûts', href: '#costs' },
+                { name: 'SWOT & PESTEL', href: '#analysis' },
+              ].map((link) => (
+                <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-uta-white/60 hover:text-uta-red transition-colors"
                   >
-                    {link.label}
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -72,26 +72,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Universal Tune Assistant. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-uta-white/10 text-center">
+          <p className="text-uta-white/40 text-sm">
+            &copy; {new Date().getFullYear()} Universal Tune Assistant. Tous droits réservés.
           </p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-gray-300 text-sm">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-gray-300 text-sm">
-              Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-gray-300 text-sm">
-              Contact
-            </a>
-          </div>
         </div>
       </div>
-      
-      {/* Background decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-50"></div>
     </footer>
   );
 };

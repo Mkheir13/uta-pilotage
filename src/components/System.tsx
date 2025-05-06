@@ -48,9 +48,6 @@ const System: React.FC = () => {
                   <li>Sessions sécurisées</li>
                 </ul>
               </div>
-              
-              {/* Decorative line */}
-              <div className="absolute left-8 top-8 h-[calc(100%-34px)] w-0.5 bg-gradient-to-b from-pink-500 to-purple-500 opacity-30"></div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -26,6 +27,15 @@ export default {
           },
         },
       },
+      colors: {
+        uta: {
+          red: '#e34b52',
+          'red-light': '#e86369',
+          'red-dark': '#c13341',
+          white: '#ffffff',
+          black: '#020102'
+        }
+      }
     },
   },
   plugins: [],

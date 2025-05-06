@@ -119,6 +119,12 @@ const Organization: React.FC = () => {
                 { activity: 'Visualisation Données', ds1: 'C', ds2: 'A', ds3: 'R' },
                 { activity: 'Tests & Validation', ds1: 'A', ds2: 'C', ds3: 'R' },
                 { activity: 'Déploiement', ds1: 'C', ds2: 'R', ds3: 'A' },
+                { activity: 'Documentation Technique', ds1: 'I', ds2: 'R', ds3: 'A' },
+                { activity: 'Gestion PRA/PCA', ds1: 'A', ds2: 'R', ds3: 'I' },
+                { activity: 'Gestion de Budget', ds1: 'R', ds2: 'A', ds3: 'C' },
+                { activity: 'Sécurité & Conformité', ds1: 'C', ds2: 'R', ds3: 'I' },
+                { activity: 'Monitoring & Alertes', ds1: 'I', ds2: 'A', ds3: 'R' },
+                { activity: 'Formation Utilisateurs', ds1: 'R', ds2: 'I', ds3: 'C' },
               ].map((row, index) => (
                 <tr key={index} className="border-b border-purple-500/10 hover:bg-purple-900/20">
                   <td className="py-2 text-left text-white">{row.activity}</td>

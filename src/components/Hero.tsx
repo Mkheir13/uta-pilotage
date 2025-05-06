@@ -1,60 +1,61 @@
-import React from 'react';
-import { Music, Headphones, Radio } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import utaLogo from '../assets/uta.png';
 
 const Hero: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-violet-800 to-pink-700 z-0" />
-      
-      {/* Animated background circles */}
-      <div className="absolute inset-0 z-10 overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
-        <div className="absolute top-60 -right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-20 left-40 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000" />
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-uta-black">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-uta-black via-uta-black to-uta-black opacity-90"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-uta-red/10 blur-3xl animate-blob"></div>
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-500/10 blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/3 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-pink-500/10 blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
-        <div className="flex justify-center mb-8">
-          <div className="relative">
-            <div className="absolute inset-0 bg-pink-500 blur-xl opacity-50 rounded-full transform scale-125" />
-            <div className="relative bg-black/30 p-6 rounded-full backdrop-blur-sm border border-white/10">
-              <Music className="h-16 w-16 text-white" />
-            </div>
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-6 flex justify-center">
+            <img src={utaLogo} alt="UTA Logo" className="w-auto h-[120px] animate-pulse-slow" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-uta-white">
+            Universal <span className="text-uta-red">Tune</span> Assistant
+          </h1>
+          <p className="text-xl md:text-2xl text-uta-white/80 max-w-3xl mx-auto mb-8">
+            Intelligence artificielle au service de la recommandation musicale
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="#introduction" className="px-8 py-3 bg-uta-red text-uta-white font-medium rounded-full hover:bg-uta-red-dark transition-colors transform hover:scale-105 duration-200">
+              Découvrir le projet
+            </a>
+            <a href="#organization" className="px-8 py-3 bg-uta-white/10 text-uta-white font-medium rounded-full hover:bg-uta-white/20 transition-colors backdrop-blur-sm transform hover:scale-105 duration-200">
+              Notre équipe
+            </a>
           </div>
         </div>
-        
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-          <span className="bg-gradient-to-r from-pink-500 to-purple-400 text-transparent bg-clip-text">
-            Universal Tune Assistant
-          </span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl mb-10 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-          La prochaine génération de découverte et de personnalisation musicale, propulsée par une technologie d'IA avancée et une compréhension approfondie des préférences musicales humaines.
-        </p>
-        
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md py-3 px-5 rounded-full border border-white/20">
-            <Headphones className="h-5 w-5 text-pink-400" />
-            <span className="text-white">Recommandations Personnalisées</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md py-3 px-5 rounded-full border border-white/20">
-            <Radio className="h-5 w-5 text-pink-400" />
-            <span className="text-white">Découverte par Humeur</span>
-          </div>
-        </div>
-        
-        <a 
-          href="#introduction" 
-          className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-8 rounded-full transform transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25"
-        >
-          Explorer le Projet
-        </a>
       </div>
-      
-      {/* Bottom decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-20" />
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce-slow">
+        <span className="text-uta-white/80 text-sm mb-2">Scroll</span>
+        <svg 
+          className="w-6 h-6 text-uta-red" 
+          fill="none" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeWidth="2" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
     </div>
   );
 };

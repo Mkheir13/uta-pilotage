@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Music } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import utaLogo from '../assets/uta.png';
 
 interface NavItem {
   label: string;
@@ -21,6 +22,7 @@ const menuItems = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +31,23 @@ const Navbar: React.FC = () => {
         setScrolled(true);
       } else {
         setScrolled(false);
+      }
+
+      // Déterminer la section active
+      const sections = menuItems.map(item => item.href.substring(1));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 150 && rect.bottom >= 150;
+        }
+        return false;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection);
+      } else if (offset < 100) {
+        setActiveSection('');
       }
     };
 
@@ -39,74 +58,69 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-black/60 backdrop-blur-lg shadow-lg'
-          : 'bg-transparent'
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-uta-black/90 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <a href="#" className="flex items-center">
-                <Music className="h-8 w-8 text-pink-500" />
-                <span className="ml-2 text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
-                  UTA
-                </span>
-              </a>
-            </div>
+            <a href="#" className="flex items-center group">
+              <img src={utaLogo} alt="UTA Logo" className="h-8 w-auto group-hover:scale-110 transition-transform duration-300" />
+              <span className="ml-2 text-lg font-bold text-uta-red">UTA</span>
+            </a>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {menuItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
+          
+          {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
+            <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none"
+              className="text-uta-white hover:text-uta-red focus:outline-none transition-colors"
+              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
-              )}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+          
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex space-x-6">
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`relative px-2 py-1 text-sm font-medium transition-all duration-300 
+                  ${activeSection === item.href.substring(1) 
+                    ? 'text-uta-red' 
+                    : 'text-uta-white hover:text-uta-red'
+                  }`}
+              >
+                {item.label}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-uta-red transform origin-left transition-transform duration-300 
+                  ${activeSection === item.href.substring(1) ? 'scale-x-100' : 'scale-x-0'}`}>
+                </span>
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      <div
-        className={`md:hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 invisible'
-        } overflow-hidden`}
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/80 backdrop-blur-lg">
+      
+      {/* Mobile navigation */}
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-uta-black/95 backdrop-blur-sm">
           {menuItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
+              className={`block px-3 py-2 text-base font-medium transition-colors
+                ${activeSection === item.href.substring(1) 
+                  ? 'text-uta-red' 
+                  : 'text-uta-white hover:text-uta-red'
+                }`}
               onClick={() => setIsOpen(false)}
-              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               {item.label}
             </a>
           ))}
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
