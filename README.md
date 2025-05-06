@@ -1,31 +1,46 @@
-# Universal Tune Assistant (UTA)
+# Site de Présentation - Universal Tune Assistant (UTA)
 
 <div align="center">
   <img src="src/assets/uta.png" alt="UTA Logo" width="150" />
-  <h3>Intelligence artificielle au service de la recommandation musicale</h3>
+  <h3>Site de présentation du projet UTA</h3>
 </div>
 
-## 🎵 À propos du projet
+## 📑 À propos de ce site
 
-UTA est une plateforme innovante de recommandation musicale qui utilise l'intelligence artificielle pour créer des expériences musicales personnalisées. Contrairement aux plateformes traditionnelles qui reposent sur une simple correspondance de genres, UTA analyse des modèles complexes dans les comportements d'écoute, les réponses émotionnelles et les facteurs contextuels pour fournir des recommandations véritablement personnalisées.
+Ce site web est une vitrine de présentation du projet **Universal Tune Assistant (UTA)**. Il a été conçu pour exposer de manière claire et interactive les différents aspects du projet, sa méthodologie et sa planification. Le site n'est pas l'application UTA elle-même, mais une interface de présentation destinée à expliquer le concept et l'organisation du projet.
 
-## ✨ Fonctionnalités
+## 🔍 Sections du site
 
-- **Recommandations personnalisées** : Algorithmes d'IA avancés adaptés à vos goûts spécifiques
-- **Intégration Spotify** : Connexion fluide avec votre compte Spotify
-- **Interface intuitive** : Expérience utilisateur moderne et réactive
-- **Visualisation des données** : Exploration graphique des caractéristiques musicales
-- **Contrôle granulaire** : Ajustement des paramètres de recommandation
+Le site web présente les sections suivantes :
 
-## 🚀 Installation
+- **Introduction** : Présentation générale du projet UTA et de ses objectifs
+- **Organisation & Équipe** : Structure de l'équipe, outils de gestion et matrice RACI
+- **Système d'Information** : Architecture technique frontend, backend et DevOps
+- **Analyse PESTEL** : Analyse des facteurs externes influençant le projet
+- **Stratégie** : Approches stratégiques et choix d'orientation du projet
+- **Roadmap** : Planification temporelle du développement
+- **Architecture** : Conception technique détaillée par couches
+- **Continuité de Service** : Stratégies PRA/PCA et gestion des risques
+- **Analyse des Coûts** : Budget détaillé et retour sur investissement
+
+## 🛠️ Technologies utilisées
+
+Ce site de présentation est construit avec :
+
+- **React & TypeScript** : Pour une interface interactive et typée
+- **Vite** : Comme outil de build rapide et moderne
+- **Tailwind CSS** : Pour un design responsive et élégant
+- **Lucide Icons** : Pour les icônes vectorielles modernes
+- **Animations CSS** : Pour des transitions fluides et une meilleure expérience utilisateur
+
+## 💻 Lancer le site
 
 ### Prérequis
 
 - Node.js (v14+)
 - npm ou yarn
-- Compte développeur Spotify
 
-### Configuration
+### Installation
 
 1. Clonez ce dépôt :
    ```bash
@@ -40,51 +55,41 @@ UTA est une plateforme innovante de recommandation musicale qui utilise l'intell
    yarn
    ```
 
-3. Créez un fichier `.env` à la racine du projet avec les variables suivantes :
-   ```
-   VITE_SPOTIFY_CLIENT_ID=votre_client_id_spotify
-   VITE_SPOTIFY_REDIRECT_URI=http://localhost:5173/callback
-   ```
-
-4. Démarrez le serveur de développement :
+3. Démarrez le serveur de développement :
    ```bash
    npm run dev
    # ou
    yarn dev
    ```
 
-5. Ouvrez [http://localhost:5173](http://localhost:5173) dans votre navigateur.
+4. Ouvrez [http://localhost:5173](http://localhost:5173) dans votre navigateur.
 
-## 🔧 Architecture
+## 🎨 Personnalisation
 
-Le projet UTA est construit sur une architecture moderne utilisant :
+Le site utilise une palette de couleurs basée sur le logo UTA :
 
-- **Frontend** : React & TypeScript avec Vite
-- **Styles** : Tailwind CSS pour un design responsive
-- **Backend** : API Flask avec Python
-- **Algorithmes** : Modèles ML pour l'analyse et les recommandations
-- **Base de données** : Dataset de caractéristiques audio Spotify
+- Rouge UTA: `#e34b52`
+- Noir UTA: `#020102`
+- Blanc UTA: `#ffffff`
+- Accents: Dégradés de violet à rose
 
-## 📊 Caractéristiques techniques
+Ces couleurs peuvent être personnalisées dans le fichier `tailwind.config.js`.
 
-- Interface utilisateur esthétique avec dégradés et animations
-- Visualisations de données avec Chart.js
-- Authentification OAuth 2.0 avec Spotify
-- Algorithmes de recommandation basés sur la similarité cosinus
-- Gestion des sessions sécurisées
+## 📱 Compatibilité
 
-## 👥 Équipe
+Le site est entièrement responsive et optimisé pour :
+- Ordinateurs de bureau
+- Tablettes
+- Smartphones
 
-- Pizzetta Antoine - Data Scientist, spécialiste en algorithmes de recommandation
-- Mederreg Kheir-eddine - Data Scientist, expert en modélisation ML
-- Tomatis Margot - Data Scientist, responsable visualisation des données
+## 👥 Auteurs du site
 
-## 📝 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
+- Pizzetta Antoine
+- Mederreg Kheir-eddine
+- Tomatis Margot
 
 ---
 
 <div align="center">
-  <p>Fait avec ❤️ par l'équipe UTA</p>
+  <p>Site de présentation créé avec ❤️ pour le projet UTA</p>
 </div> 
